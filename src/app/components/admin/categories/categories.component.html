@@ -1,0 +1,53 @@
+<!--   MODAL  -->
+<div class="con d-flex flex-row justify-content-center" id="mymoda">
+    <div class="moda text-center d-flex flex-column align-items-center">
+        <span class="mensaje "><svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-exclamation-triangle-fill " fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 5zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+          </svg><p> {{textModal}}</p></span>
+        <div class="d-flex flex-row">
+            <button type="button" (click)="cerrar()" class="btn btn-sm  text-capitalize btn-primary align-self-end mr-1"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-left " fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"/>
+              </svg>Cancelar</button>
+            <button type="button" (click)="cerrar()" class="btn btn-sm  text-capitalize btn-danger align-self-end mr-1"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+              </svg>Solo la Categoria</button>
+            <button type="button" (click)="cerrar()" class="btn btn-sm  text-capitalize btn-warning align-self-end"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-octagon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"/>
+                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg>Categoria y Productos</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row input  ">
+        <div class="col d-flex flex-column align-items-center">
+            <input type="text" class="form-control inputCategorie" placeholder="Agregar Categoria" aria-describedby="addon-wrapping" [(ngModel)]="newCategorie">
+            <button class="btn btn-sm btn-primary text-capitalize mt-2 mb-5" type="button">Agregar Categoria</button>
+        </div>
+    </div>
+    <div class="row d-flex flex-row justify-content-center">
+        <cdk-virtual-scroll-viewport itemSize="60" class="scroll">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Cantidad de Productos</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> nombre </td>
+                        <td> 333</td>
+                        <td>
+                            <button title="Eliminar" (click)="modal('visible','1000')" type="button" class="btn btn-danger mr-1 btn-sm text-capitalize">Eliminar</button>
+                            <button title="Actualizar" (click)="update()" type="button" class="btn btn-primary btn-sm text-capitalize">actualizar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </cdk-virtual-scroll-viewport>
+    </div>
+</div>

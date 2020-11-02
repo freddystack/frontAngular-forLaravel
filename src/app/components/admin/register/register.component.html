@@ -1,0 +1,89 @@
+<div class="container-fluid animate__animated animate__fadeInLeft  animate__faster	500ms ">
+    <div class="row">
+        <div class="col d-flex flex-column align-items-center">
+            <form (ngSubmit)="registerUser( forma )" #forma="ngForm" autocomplete="off">
+                <div class="form-group">
+                    <label >Nombre</label>
+                    <input type="text" 
+                           class="form-control" 
+                           [class.is-invalid]="name.invalid && name.touched"
+                           name="name"
+                           [(ngModel)]="usuarioModel.name"
+                           required
+                           #name="ngModel"
+                           aria-describedby="emailHelp">
+                     <small *ngIf="name.invalid && name.touched"  class="text-danger">
+                         El nombre es requerido
+                     </small> 
+                </div>
+                <div class="form-group">
+                    <label >Correo</label>
+                    <input type="email"
+                            class="form-control"
+                            [class.is-invalid]="email.invalid && email.touched"
+                            name="email"
+                            [(ngModel)]="usuarioModel.email"
+                            required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                            #email="ngModel"
+                             >
+                    <small *ngIf="email.invalid && email.touched"  class="text-danger">
+                      El correo es requerido
+                    </small> 
+                </div>
+
+                <div class="form-group">
+                    <label >Contraseña</label>
+                    <input type="password" 
+                           class="form-control"
+                           [class.is-invalid]="password.invalid && password.touched"
+                           name="password"
+                           [(ngModel)]="usuarioModel.password"
+                           required
+                           #password="ngModel"
+                           minlength="8"
+                           maxlength="15"
+                            >
+                    <small *ngIf="password.invalid && password.touched"  class="text-danger">
+                        La contraseña es requerida
+                    </small> 
+                </div>
+               
+                <div class="form-group">
+                    <label >Puesto</label>
+                    <select  required ngModel name="roll" 
+                      class="custom-select"
+                      [class.is-invalid]="select.invalid && select.touched"
+                      #select="ngModel"
+                      >
+                      <option selected disabled value="">Seleccionar...</option>
+                      <option value="admin" >Administrador</option>
+                      <option value="reception">Recepcionista</option>
+                      <option value="warehouse">Almacen</option>
+                    </select>
+                <small *ngIf="select.invalid && select.touched" class="text-danger">
+                   El puesto es requerido
+                </small>
+                </div>
+                <button type="submit" 
+                        style="width: 130px;"
+                        class="btn btn-primary text-capitalize"
+                        [disabled]="loading"
+                        >
+                        <i [ngClass]=" { 'fa-save':!loading , 'fa-sync-alt fa-spin': loading } " class="fa mr-2"></i>
+                        <span *ngIf="!loading">Guardar</span>
+                        <span *ngIf="loading">Guardando</span>
+              </button>
+            </form>
+
+          <!--   <button type="submit" style="width: 160px;"
+            class="btn btn-primary text-capitalize"
+            [disabled]="loading"
+            >
+            <i class="fas fa-sync-alt fa-spin"></i>
+            <span *ngIf="!loading">Guardar</span>
+            <span *ngIf="loading">Guardando</span>
+  </button> -->
+        </div>
+    </div>
+</div>

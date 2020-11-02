@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col d-flex flex-row">
+            <aside>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col d-flex flex-column align-items-center">
+                            <button type="button" class="btn btn-danger btn-sm btn-block text-capitalize ">regresar</button>
+
+                            <button type="button" class="btn btn-dark btn-sm btn-block text-capitalize" [routerLink]="['register']">
+                                Registrar nuevo Usuario
+                           </button>
+                            <button type="button" class="btn btn-dark btn-sm text-capitalize" routerLinkActive="active" [routerLink]="['userList']">Lista de usuarios</button>
+                        
+                            
+                            <button type="button" class="btn btn-dark btn-sm text-capitalize" routerLinkActive="active"  [routerLink]="['productsList']">Lista de Productos</button>
+                            <button type="button" class="btn btn-dark btn-sm text-capitalize" routerLinkActive="active"  [routerLink]="['categoriesList']">lista de categorias</button>
+                            
+                            <button type="button" class="btn btn-dark btn-sm text-capitalize" routerLinkActive="active"  [routerLink]="['facturesList']">ultimas 100 facturas emitidas</button>
+                            <button type="button" class="btn btn-dark btn-sm text-capitalize" routerLinkActive="active"  [routerLink]="['report']">solicitar reporte</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+
+            <div class="renderadmin">
+
+         
+
+                 <router-outlet ></router-outlet>
+                <!--  <div class="seccion d-flex flex-row justify-content-end">
+                    <button type="button" class="btn btn-primary btn-sm text-capitalize"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"/>
+                      </svg>cerrar seccion</button>
+                </div> -->
+       <!--          <div *ngIf="stateRegister == true">
+                    <app-register></app-register>
+                </div>
+                <div>
+                    <app-lista-user></app-lista-user> 
+                <div>
+                    <app-buscar-usuario></app-buscar-usuario> 
+                </div>
+                <div>
+                     <app-list-products></app-list-products> 
+                </div>
+                <div>
+                    <app-categories></app-categories>
+                </div>
+ -->
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

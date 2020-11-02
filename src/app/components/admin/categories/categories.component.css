@@ -1,0 +1,60 @@
+.container {
+    width: 80%;
+}
+
+.moda {
+    z-index: 1000;
+    position: fixed;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    display: block;
+    box-shadow: 1px 1px 5px 1px black;
+    border-radius: 5px;
+    height: auto;
+    padding: 5px;
+    margin-right: 20rem;
+}
+
+.mensaje {
+    font-size: 1rem;
+}
+
+.mensaje svg {
+    color: rgb(255, 225, 0);
+}
+
+.con {
+    z-index: 0;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: coral;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bi {
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.inputCategorie {
+    width: 50%;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.col button {
+    height: 2rem;
+}
+
+.scroll {
+    height: 60vh;
+    width: 90%;
+    border: 1px solid black
+}

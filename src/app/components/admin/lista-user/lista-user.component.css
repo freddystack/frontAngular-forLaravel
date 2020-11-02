@@ -1,0 +1,13 @@
+table {
+    width: 90%;
+}
+
+.scroll {
+    height: 80vh;
+    width: 90%;
+    border: 1px solid black;
+}
+
+.table {
+    width: 100%;
+}

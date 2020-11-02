@@ -1,0 +1,54 @@
+<!-- <div class="contain d-flex flex-row justify-content-center" id="mymoda">
+    <div class="modall text-center d-flex flex-column align-items-center">
+        <span class="mensaje"><p> {{textModal}}</p></span>
+        <button type="button" (click)="cerrar()" class="btn btn-sm btn-dark text-capitalize align-self-end">Aceptar</button>
+    </div>
+</div>
+
+ -->
+
+
+
+<div class="container-fluid d-flex flex-row justify-content-center">
+    <div class="row  ">
+        <div class="col columnaLogin  ">
+            <div class="card d-flex flex-column align-items-center">
+                <form autocomplete="off" (ngSubmit)="login( forma )" #forma="ngForm" class="d-flex flex-column">
+              
+                    <img src="../../../assets/images/Logo.png" >
+                    <div class="form-group">
+                        <input type="text"
+                        placeholder="Correo" 
+                        class="form-control " 
+                        [class.is-invalid]="email.invalid && email.touched"
+                        [(ngModel)]="usuarioModel.email"
+                        name="email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                        required
+                        #email="ngModel">
+                        <small *ngIf="email.invalid && email.touched" class="text-danger">
+                            El correo es requerido
+                        </small>  
+                    </div>
+                    <div class="form-group">
+                        <input type="password" 
+                        placeholder="Contraseña"
+                        class="form-control" 
+                        [class.is-invalid]="password.invalid && password.touched"
+                        [(ngModel)]="usuarioModel.password"
+                        name="password"
+                        minlength="8"
+                        maxlength="15"
+                        required
+                        #password="ngModel">
+                        <small *ngIf="password.invalid && password.touched" class="text-danger">
+                            La contraseña es requerida
+                        </small>
+                    </div>
+                    <button type="submit" class="btn btn-success mt-3 text-capitalize" >Entrar</button>
+                
+             </form>
+          </div>
+        </div>
+    </div>
+</div>

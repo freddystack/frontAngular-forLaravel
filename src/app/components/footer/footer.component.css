@@ -1,0 +1,10 @@
+footer {
+    background-color: rgb(223, 134, 17);
+    width: 100%;
+    height: 100px;
+}
+
+footer .col {
+    color: rgb(255, 255, 255);
+    height: 100px;
+}
