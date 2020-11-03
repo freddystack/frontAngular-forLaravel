@@ -9,8 +9,9 @@ export class FiltrarPipe implements PipeTransform {
     if(arg === '' || arg.length < 2) return value;
      const resul = []
      for(let nom of value){
-        if(nom.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1){
+        if(nom.name.toLowerCase().indexOf(arg.toLowerCase()) > -1){
            resul.push(nom)
+           console.log(nom);
         }
      }
      return resul

@@ -5,6 +5,7 @@ aside {
     padding-right: 5px;
     width: 15%;
     height: 100vh;
+    z-index: 1000;
 }
 
 .col button {

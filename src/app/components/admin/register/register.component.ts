@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UsuarioModel } from '../../../model/usuarioModel';
 import { ServiceApiService } from '../../../services/service-api.service';
+import { EncrypjsService } from '../../../services/encrypjs.service';
+
+import { ActivatedRoute } from '@angular/router';
+
 
 import { compileNgModule } from '@angular/compiler';
 
@@ -14,12 +18,18 @@ import { compileNgModule } from '@angular/compiler';
 })
 export class RegisterComponent implements OnInit {
 
+
+
   usuarioModel = new UsuarioModel()
   loading: boolean = false
 
-  constructor( private service: ServiceApiService ) { }
+  constructor( private service: ServiceApiService,
+               private activateRouter: ActivatedRoute,
+               private ecrypt : EncrypjsService
+    ) { }
 
   ngOnInit(): void {
+      this.updateUser()
   }
 
   registerUser(forma : NgForm){
@@ -39,6 +49,17 @@ export class RegisterComponent implements OnInit {
     if(this.loading){
        this.service.registerUser(forma.value).subscribe()
     }
+
+  }
+
+
+  updateUser(){
+    this.activateRouter.params.subscribe( p =>   {
+       console.log( p['id'] )
+    let de =  this.ecrypt.decrypt(p['id'])
+       console.log("ESTE DESEINCRITADA  --" + de); 
+    } )
+   
 
   }
 

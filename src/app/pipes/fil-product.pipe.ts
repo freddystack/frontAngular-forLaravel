@@ -9,8 +9,9 @@ export class FilProductPipe implements PipeTransform {
     if(arg === '' || arg.length < 2) return value;
      const resul = []
      for(let pro of value){
-        if(pro.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1){
+        if(pro.name.toLowerCase().indexOf(arg.toLowerCase()) > -1){
            resul.push(pro)
+           console.log(pro);
         }
      }
      return resul

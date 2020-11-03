@@ -14,6 +14,8 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { ServiceApiService } from './services/service-api.service';
 import { LoginService } from './services/login.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { EncrypjsService } from './services/encrypjs.service';
+
 
 
 // COMPONENTS
@@ -76,7 +78,8 @@ import { ReportComponent } from './components/admin/report/report.component';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi : true
-    }
+    },
+    EncrypjsService
   ],
   bootstrap: [AppComponent]
 })

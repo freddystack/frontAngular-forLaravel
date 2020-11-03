@@ -71,6 +71,21 @@ export class ServiceApiService {
      return this.http.get(`${this.URL}admin/users`)
   }
 
+  deleteUser( id: any ){
+    return this.http.delete(`${this.URL}admin/user/${id}`)
+    .pipe(
+      map((res: any) =>{
+          swa.fire({
+            icon: "success",
+            text: res.data
+          })
+      }),
+      catchError( err => of(
+        console.log(err)
+      ))
+    )
+  }
+
   private saveToken(token : string){
     this.token = token
     localStorage.setItem('token', token)

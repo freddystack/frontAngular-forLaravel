@@ -10,10 +10,12 @@ import { ListProductsComponent } from '../list-products/list-products.component'
 
 
 export const ADMIN_CHILDREN :Routes =[
-  {path : "register", component: RegisterComponent },
+  {path : "register/:id", component: RegisterComponent },
   {path : "userList", component: BuscarUsuarioComponent },
   {path : "productsList", component: ListProductsComponent },
   {path : "categoriesList", component: CategoriesComponent },
   {path : "facturesList", component: FacturesComponent },
-  {path : "report", component: ReportComponent }
+  {path : "report", component: ReportComponent },
+  {path : "**" , pathMatch: "full", component: RegisterComponent }
+
 ]
